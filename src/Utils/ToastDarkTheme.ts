@@ -5,7 +5,7 @@ export default function ToastLightTheme (message: string, icon: string): void{
     icon: icon,
     style: {
       borderRadius: "8px",
-      background: "",
+      background: "#1d293d",
       color: "#fff",
     },
   });
