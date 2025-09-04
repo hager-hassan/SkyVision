@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.light-theme {
+  background: 
+    radial-gradient(circle at bottom left, #d2c4b8 0%, #cabfb6 10%, transparent 50%),
+    linear-gradient(135deg, #dbe0fe 0%, #adb7f5 100%);
+}
+
+.dark-theme {
+  background: 
+    radial-gradient(circle at bottom left, #abcefb 0%, #68a6f6 10%, transparent 50%),
+    linear-gradient(135deg, #235ca8 0%, #01224d 50%);
+}
+
+body {
+  font-family: "Roboto";
+  min-height: 100vh;
+  transition: all 0.7s;
+}
+
+@theme{
+  --color-white-transparent: rgba(255, 255, 255, 0.67);
+  --color-black-transparent: rgba(0, 0, 0, 0.5);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+
+  @media (width >= 40rem /* 640px */) {
+    max-width: 38.75rem /* 620px */;
+    padding-inline: 0;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 45rem /* 720px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 60.9375rem /* 975px */;
+  }
+  @media (width >= 75rem /* 1200px */) {
+    max-width: 71.25rem /* 1140px */;
+  }
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 87.5rem /* 1400px */;
+  }
+  @media (width >= 103rem /* 1648px */) {
+    max-width: 93.75rem /* 1500px */;
+  }
+  @media (width >= 120rem /* 1920px */) {
+    max-width: 112.5rem /* 1800px */;
+  }
+  @media (width >= 133rem /* 2128px */) {
+    max-width: 125rem /* 2000px */;
+  }
+}
