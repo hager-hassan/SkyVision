@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { WeatherContext } from "../Context/WeatherContext";
 import fetchCurrentWeather from "../Services/FetchCurrentWeather";
 import type CurrentWeatherInterface from "../Interface/CurrentWeatherInterface";
@@ -8,7 +8,6 @@ import Toast from "../Utils/Toast";
 import fetchUserLocation from "../Services/FetchUserLocation";
 import FetchSunAndMoonPanel from "../Services/FetchSunAndMoonPanel";
 import FetchForecast from "../Services/FetchForecast";
-import { ThemeContext } from "./ThemeContext";
 
 type Props = { children: ReactNode };
 
@@ -17,7 +16,6 @@ export default function LocationContextProvider({ children }: Props) {
   const [forecast, setForecast] = useState<ForecastInterface | undefined>();
   const [sunAndMoonPanel, setSunAndMoonPanel] = useState<SunAndMoonPanelInterface | undefined>();
   const [location, setLocation] = useState<string | undefined>();
-  const {theme} = useContext(ThemeContext)!;
 
   async function getCurrentWeather(city: string | undefined): Promise<void> {
     try {
