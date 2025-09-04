@@ -1,4 +1,4 @@
-import ToastLightTheme from '../Utils/ToastLightTheme';
+import ToastLightTheme from '../Utils/Toast';
 
 export default function fetchUserLocation(): Promise<string> {
   return new Promise((resolve) => {

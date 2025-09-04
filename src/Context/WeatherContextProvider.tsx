@@ -4,8 +4,7 @@ import fetchCurrentWeather from "../Services/FetchCurrentWeather";
 import type CurrentWeatherInterface from "../Interface/CurrentWeatherInterface";
 import type SunAndMoonPanelInterface from "../Interface/SunAndMoonPanelInterface";
 import type ForecastInterface from '../Interface/ForecastInterface'
-import ToastLightTheme from "../Utils/ToastLightTheme";
-import ToastDarkTheme from "../Utils/ToastDarkTheme";
+import Toast from "../Utils/Toast";
 import fetchUserLocation from "../Services/FetchUserLocation";
 import FetchSunAndMoonPanel from "../Services/FetchSunAndMoonPanel";
 import FetchForecast from "../Services/FetchForecast";
@@ -27,11 +26,7 @@ export default function LocationContextProvider({ children }: Props) {
     } catch (error) {
       if (error instanceof Error) {
         const message: string = error.message;
-        if(theme === 'dark'){
-          ToastDarkTheme(message, "❌");
-        } else{
-          ToastLightTheme(message, "❌");
-        }
+        Toast(message, "❌");
       }
     }
   }
@@ -59,11 +54,7 @@ export default function LocationContextProvider({ children }: Props) {
     } catch (error) {
       if (error instanceof Error) {
         const message: string = error.message;
-        if(theme === 'dark'){
-          ToastDarkTheme(message, "❌");
-        } else{
-          ToastLightTheme(message, "❌");
-        }
+        Toast(message, "❌");
       }
     }
   }
