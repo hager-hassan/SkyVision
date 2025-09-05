@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# SkyVision 🌤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SkyVision is a modern **React + TypeScript** weather application that provides **real-time weather updates**, **3-day forecasts**, **sun & moon details**, and **geolocation-based weather detection**.  
+Built with a **responsive UI** for a seamless experience across devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🌍 **Geolocation support**: detect user’s location automatically or search manually.
+- 🌡️ **Live weather updates**: temperature, humidity, wind speed, pressure, UV index, and more.
+- 📅 **3-day weather forecast** with hourly breakdown.
+- ☀️🌙 **Sun & Moon info**: sunrise, sunset, moonrise, and moonset.
+- 📱 **Fully responsive design** for mobile, tablet, and desktop.
+- 🌗 **Light & Dark Mode** toggle for better user experience.
+- ⚡ Built with **React, TypeScript, TailwindCSS**, and **Axios**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
+- **Framework & Language:** React 19 + TypeScript  
+- **Styling:** Tailwind CSS  
+- **Data Fetching:** Axios  
+- **State Management:** React Context API  
+- **Notifications:** React Hot Toast  
+- **Icons:** React Icons  
+- **Weather Data Provider:** WeatherAPI
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Live Demo
+Check out the live demo here 👉 [SkyVision on Netlify](https://skyvision-app.netlify.app/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📸 Screenshots
+### 🌞 Light Mode
+![Light Mode](./Screenshots/light-mode.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🌙 Dark Mode
+![Dark Mode](./Screenshots/dark-mode.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Project Setup
+
+```bash
+# Clone the repo
+git clone <your-repo-link>
+
+# Navigate to project folder
+cd skyvision
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
