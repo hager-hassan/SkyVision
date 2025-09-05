@@ -39,8 +39,9 @@ export default function CurrentWeather() {
           <div>
             {currentWeather ? (
               <img
-                src={currentWeather.icon}
+                src={currentWeather.icon.replace("http://", "https://")}
                 alt="weather icon"
+                loading="lazy"
                 className="w-15 sm:w-17"
               />
             ) : (

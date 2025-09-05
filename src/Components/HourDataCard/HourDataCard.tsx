@@ -10,7 +10,7 @@ export default function HourDataCard({ hourData }: HourDataCardProps) {
     <div className="bg-white dark:bg-gray-700 p-3 rounded-xl border-2 border-gray-100 flex items-center justify-center transition-all duration-300">
       <div className="flex flex-nowrap gap-1">
         <div className='flex items-center shrink-0'>
-          <img src={hourData.icon} alt="weather icon" />
+          <img src={hourData.icon.replace("http://", "https://")} alt="weather icon" loading="lazy"/>
         </div>
 
         <div className="font-semibold flex flex-col gap-1 justify-center shrink">
