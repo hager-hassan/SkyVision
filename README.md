@@ -47,7 +47,7 @@ Check out the live demo here 👉 [SkyVision on Netlify](https://skyvision-app.n
 git clone <your-repo-link>
 
 # Navigate to project folder
-cd skyvision
+cd skyVision
 
 # Install dependencies
 npm install
