@@ -75,6 +75,13 @@ export default function CurrentWeather() {
             </div>
           </div>
         </div>
+
+        <div className="mt-4">
+          <p className="underline text-xs text-gray-700 dark:text-white cursor-pointer transition-all duration-300
+          hover:text-gray-500 dark:hover:text-gray-300 2xl:text-sm">
+            View on map
+          </p>
+        </div>
       </div>
 
       <div className="mt-5 grid gap-5 grid-cols-[repeat(auto-fit,minmax(145px,1fr))] sm:grid-cols-3">
