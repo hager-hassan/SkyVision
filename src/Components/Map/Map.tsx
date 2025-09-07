@@ -47,7 +47,7 @@ export default function Map({ handleShowAndHideMap }: currentWeatherProps) {
           scrollWheelZoom={false}
           className="w-full h-100 sm:h-115 xl:h-120 2xl:h-130"
           placeholder={
-            <div className="w-full h-80 bg-gray-300 animate-pulse"></div>
+            <div className="w-full h-100 bg-gray-300 animate-pulse sm:h-115 xl:h-120 2xl:h-130"></div>
           }
         >
           <TileLayer
