@@ -7,7 +7,7 @@ type ContextProps = {
   currentWeather: CurrentWeatherInterface | undefined;
   location: string | undefined;
   setLocation: (location: string) => void;
-  getCurrentWeather: (city: string | undefined) => void;
+  gitWeatherForSpecificLocation: (city: string | undefined) => void;
   sunAndMoonPanel: SunAndMoonPanelInterface | undefined;
   forecast: ForecastInterface | undefined
 };

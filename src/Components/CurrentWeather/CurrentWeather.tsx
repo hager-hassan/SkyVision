@@ -3,7 +3,11 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { WeatherContext } from "../../Context/WeatherContext";
 import WeatherStat from "../WeatherStat/WeatherStat";
 
-export default function CurrentWeather() {
+interface currentWeatherProps {
+  handleShowAndHideMap: () => void;
+}
+
+export default function CurrentWeather({handleShowAndHideMap}: currentWeatherProps) {
   const context = useContext(WeatherContext);
 
   const currentWeather = context?.currentWeather;
@@ -78,7 +82,9 @@ export default function CurrentWeather() {
 
         <div className="mt-4">
           <p className="underline text-xs text-gray-700 dark:text-white cursor-pointer transition-all duration-300
-          hover:text-gray-500 dark:hover:text-gray-300 2xl:text-sm">
+          hover:text-gray-500 dark:hover:text-gray-300 2xl:text-sm"
+          onClick={() => {handleShowAndHideMap()}}
+          >
             View on map
           </p>
         </div>

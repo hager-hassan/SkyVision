@@ -17,6 +17,8 @@ export default async function fetchCurrentWeather(city: string | undefined): Pro
             temperature: data.current.temp_c,
             feelsLike: data.current.feelslike_c,
             condition: data.current.condition.text,
+            lat: data.location.lat,
+            lon: data.location.lon,
             windSpeed: data.current.wind_kph,
             windDir: data.current.wind_dir,
             humidity: data.current.humidity,

@@ -5,6 +5,8 @@ export default interface CurrentWeatherInterface {
     temperature: number;
     feelsLike: number;
     condition: string;
+    lat: number;
+    lon: number;
     windSpeed: number;
     windDir: string;
     humidity: number;

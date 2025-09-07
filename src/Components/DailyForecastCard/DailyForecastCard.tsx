@@ -35,7 +35,11 @@ export default function DailyForecastCard({ data, day }: DailyForecastCardProps)
     <section className="bg-white-transparent dark:bg-black-transparent border-2 border-white 
     dark:border-gray-300 px-3 py-5 rounded-xl cursor-grab transition-all duration-300">
       <header className="mb-3">
+        {day ?
         <h4 className="text-gray-600 dark:text-gray-100 text-xs 2xl:text-sm transition-all duration-300">{day} Forecast</h4>
+        :
+        <p className="text-gray-600 animate-pulse">_______</p>
+       }
       </header>
 
       <div
@@ -46,9 +50,22 @@ export default function DailyForecastCard({ data, day }: DailyForecastCardProps)
         onMouseUp={onMouseUpOrLeave}
         onMouseLeave={onMouseUpOrLeave}
       >
+        {data ?
+        <>
         {data?.map((hour: HourlyForecast, index) => (
           <HourDataCard key={index} hourData={hour} />
         ))}
+        </>
+        :
+        <>
+        {Array.from({ length: 24 }).map((_, i) => (
+        <div 
+          key={i} 
+          className="h-23 w-full bg-gray-300 animate-pulse rounded-xl" 
+        />
+      ))}
+        </>
+      }
       </div>
     </section>
   );

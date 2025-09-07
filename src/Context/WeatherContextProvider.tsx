@@ -18,15 +18,8 @@ export default function LocationContextProvider({ children }: Props) {
   const [location, setLocation] = useState<string | undefined>();
 
   async function getCurrentWeather(city: string | undefined): Promise<void> {
-    try {
       const data = await fetchCurrentWeather(city);
       setCurrentWeather(data);
-    } catch (error) {
-      if (error instanceof Error) {
-        const message: string = error.message;
-        Toast(message, "❌");
-      }
-    }
   }
 
   async function getForecast(city: string | undefined): Promise<void> {
@@ -39,15 +32,12 @@ export default function LocationContextProvider({ children }: Props) {
     setSunAndMoonPanel(data);
   }
 
-  async function getCompleteWeather(): Promise<void> {
+  async function gitWeatherForSpecificLocation(city: string | undefined): Promise<void>{
     try {
-      const result: string = await fetchUserLocation();
-      setLocation(result);
-
       await Promise.all([
-        getCurrentWeather(result),
-        getSunAndMoonPanel(result),
-        getForecast(result),
+        getCurrentWeather(city),
+        getSunAndMoonPanel(city),
+        getForecast(city),
       ]);
     } catch (error) {
       if (error instanceof Error) {
@@ -57,17 +47,23 @@ export default function LocationContextProvider({ children }: Props) {
     }
   }
 
+  async function getCompleteWeather(city: string | undefined): Promise<void> {
+    city = await fetchUserLocation();
+    setLocation(city);
+    gitWeatherForSpecificLocation(city);
+  }
+
   const contextProps = {
     currentWeather,
     location,
     setLocation,
-    getCurrentWeather,
+    gitWeatherForSpecificLocation,
     sunAndMoonPanel,
     forecast,
   };
 
   useEffect(() => {
-    getCompleteWeather();
+    getCompleteWeather(location);
   }, []);
 
   return (

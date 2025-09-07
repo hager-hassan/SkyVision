@@ -3,7 +3,7 @@ import { useContext, useRef } from "react";
 import { WeatherContext } from "../../Context/WeatherContext";
 
 export default function SearchInput() {
-  const { setLocation, getCurrentWeather } = useContext(WeatherContext)!;
+  const { setLocation, gitWeatherForSpecificLocation } = useContext(WeatherContext)!;
   const inputRef = useRef<HTMLInputElement | null>(null);
   const debounceRef = useRef<number | null>(null);
 
@@ -16,7 +16,7 @@ export default function SearchInput() {
 
     debounceRef.current = window.setTimeout(() => {
       setLocation(value);
-      getCurrentWeather(value);
+      gitWeatherForSpecificLocation(value);
     }, 800);
   }
 
