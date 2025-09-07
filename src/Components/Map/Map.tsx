@@ -1,8 +1,11 @@
 import { MapContainer, TileLayer, Marker, Popup, Tooltip  } from "react-leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useContext } from "react";
 import { WeatherContext } from "../../Context/WeatherContext";
 import { FaWindowClose } from "react-icons/fa";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 interface currentWeatherProps {
   handleShowAndHideMap: () => void;
@@ -10,6 +13,16 @@ interface currentWeatherProps {
 
 export default function Map({ handleShowAndHideMap }: currentWeatherProps) {
   const { currentWeather, gitWeatherForSpecificLocation } = useContext(WeatherContext)!;
+
+  const mapIcon = L.icon({
+    iconUrl: markerIcon ,
+    shadowUrl: markerShadow,
+    iconSize: [26, 41],
+    iconAnchor: [13, 41],
+    popupAnchor: [0, -45],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+  })
 
   return (
     <section
@@ -44,6 +57,7 @@ export default function Map({ handleShowAndHideMap }: currentWeatherProps) {
           <Marker
             position={[currentWeather.lat, currentWeather.lon]}
             draggable={true}
+            icon={mapIcon}
             eventHandlers={{
               dragend: (event) =>{
                 const {lat , lng} = event.target.getLatLng();
@@ -72,7 +86,7 @@ export default function Map({ handleShowAndHideMap }: currentWeatherProps) {
 
             <Tooltip
             direction="center"
-            offset={[0, 50]}
+            offset={[0, 20]}
             > 
               Drag to check weather in another city
             </Tooltip>
