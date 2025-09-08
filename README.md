@@ -1,12 +1,14 @@
 # SkyVision 🌤️
 
-SkyVision is a modern **React + TypeScript** weather application that provides **real-time weather updates**, **3-day forecasts**, **sun & moon details**, and **geolocation-based weather detection**.  
-Built with a **responsive UI** for a seamless experience across devices.
+SkyVision is a modern React + TypeScript weather application that provides real-time weather updates, 3-day forecasts, sun & moon details, and geolocation-based weather detection.
+It also features an interactive map to check the weather anywhere in the world.
+Built with a responsive UI for a seamless experience across devices.
 
 ---
 
 ## 🚀 Features
-- 🌍 **Geolocation support**: detect user’s location automatically or search manually.
+- 🌍 **Geolocation support**: detect the user’s location automatically or search manually.
+- 🗺️ Interactive Map (React Leaflet): explore the weather anywhere by dragging the marker to select a new location on the map.
 - 🌡️ **Live weather updates**: temperature, humidity, wind speed, pressure, UV index, and more.
 - 📅 **3-day weather forecast** with hourly breakdown.
 - ☀️🌙 **Sun & Moon info**: sunrise, sunset, moonrise, and moonset.
@@ -22,7 +24,8 @@ Built with a **responsive UI** for a seamless experience across devices.
 - **Data Fetching:** Axios  
 - **State Management:** React Context API  
 - **Notifications:** React Hot Toast  
-- **Icons:** React Icons  
+- **Icons:** React Icons
+- **Maps:** React Leaflet + Leaflet
 - **Weather Data Provider:** WeatherAPI
 ---
 
@@ -38,16 +41,18 @@ Check out the live demo here 👉 [SkyVision on Netlify](https://skyvision-app.n
 ### 🌙 Dark Mode
 ![Dark Mode](./Screenshots/dark-mode.png)
 
+### 🗺️ Map Integration
+![Map Integration](./Screenshots/map-integration.png)
+
 ---
 
 ## 📂 Project Setup
 
-```bash
 # Clone the repo
-git clone <your-repo-link>
+git clone http://github.com/hager-hassan/SkyVision
 
 # Navigate to project folder
-cd skyVision
+cd SkyVision
 
 # Install dependencies
 npm install
